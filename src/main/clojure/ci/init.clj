@@ -1,7 +1,8 @@
-(ns ci.init)
+(ns ci.init
+  (:require [ci.git :as git]))
 
 (defn -main
-  [& m] (println "ci.init loaded"))
+  ([m] (git/set-credentials (first m) (second m))))
 
 (defn main [& m]
   (-main m))

@@ -10,5 +10,5 @@
   :main ci.init
   :repl-init ci.init
   :dependencies [[org.clojure/clojure "1.3.0"]
-                 [clj-http "0.3.3"]
+                 [clj-http "0.3.5"]
                  [org.clojure/data.json "0.1.2"]])
