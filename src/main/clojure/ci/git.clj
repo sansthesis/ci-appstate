@@ -13,7 +13,6 @@
 
 (defn list-closed-pull-requests
   ([username password owner project]
-    (json/read-json (:body (client/get (str "https://api.github.com/repos/" owner "/" project "/pulls") {:basic-auth [username password] :query-params {:state "closed"}}))))
+    (reverse (sort-by :closed_at (json/read-json (:body (client/get (str "https://api.github.com/repos/" owner "/" project "/pulls") {:basic-auth [username password] :query-params {:state "closed"}}))))))
   ([username password owner project start]
-    (reverse (sort-by :closed_at (filter #(>= 0 (compare start (:closed_at %))) (list-closed-pull-requests username password owner project))))
-    ))
+    (filter #(>= 0 (compare start (:closed_at %))) (list-closed-pull-requests username password owner project))))
