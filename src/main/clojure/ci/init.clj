@@ -1,7 +1,8 @@
 (ns ci.init
   (:gen-class)
   (:require [ci.git :as git]
-            [postal.core :as mail]))
+            [postal.core :as mail]
+            [ci.email :as email]))
 
 (defn -main
   ([& m] (mail/send-message #^{:host "smtp.gmail.com"
@@ -9,11 +10,11 @@
                                :user (first m)
                                :pass (second m)
                                :ssl true}
-                              {:from "jasoncrose@gmail.com"
-                               :to "jasoncrose@gmail.com"
-                               :subject "lol, clojure"
+                              {:from (first m)
+                               :to (nth m 2)
+                               :subject (nth m 3)
                                :body [:alternative
                                       {:type "text/plain"
                                        :content "This is a test."}
                                       {:type "text/html"
-                                       :content (ci.email/test)}]})))
+                                       :content (email/test-email)}]})))
