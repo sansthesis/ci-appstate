@@ -11,9 +11,9 @@
                                :ssl true}
                               {:from "jasoncrose@gmail.com"
                                :to "jasoncrose@gmail.com"
-                               :subject "multipart/alternative test"
+                               :subject "lol, clojure"
                                :body [:alternative
                                       {:type "text/plain"
                                        :content "This is a test."}
                                       {:type "text/html"
-                                       :content "<html><head> </head><body><h1>Heading 1</h1><p>This is a test.</p></body></html>"}]})))
+                                       :content (ci.email/test)}]})))

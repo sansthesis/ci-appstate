@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>email</title>
+    <style type="text/css">
+      html {
+      overflow: auto;
+      font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;
+      }
+      .wrapper {
+      margin-left: auto;
+      margin-right: auto;
+      }
+      html, table, thead, tbody, tr, th, td, body, h1, h2, h3, h4, h5, p, ul, ol, li {
+      margin: 0;
+      padding: 0;
+      border-spacing: 0;
+      }
+      thead, tfoot {
+      background-color: #333;
+      color: #ddd;
+      }
+      .wrapper, table, thead, tbody, tfoot {
+      max-width: 1024px;
+      width: 100%;
+      }
+      .column1 {
+      background-color: #ccc;
+      max-width: 824px;
+      min-width: 120px;
+      }
+      .column2 {
+      background-color: #bbb;
+      width: 200px;
+      min-width: 200px;
+      }
+      table {
+      border-collapse: collapse;
+      table-layout: auto;
+      }
+      td, th {
+      text-align: left;
+      vertical-align: top;
+      }
+      p {
+      margin-bottom: 2em;
+      }
+      tfoot ul {
+      list-style: none;
+      }
+      tfoot li {
+      float: left;
+      }
+      li.separator {
+      margin-left: 5px;
+      margin-right: 5px;
+      }
+      a {
+      text-decoration: none;
+      }
+      @media screen and (max-width: 1024px), (min-device-width: 768px) and (max-device-width: 1024px) {
+      .wrapper, thead, tbody, tfoot {
+      margin: 0;
+      width: 100%;
+      max-width: 1014px;
+      }
+      }
+      @media screen and (max-width: 480px), (min-device-width: 320px) and (max-device-width: 480px) {
+      .wrapper {
+      max-width: 480px;
+      min-width: 290px;
+      }
+      td, .column1, .column2 {
+      float: left;
+      min-width: 290px;
+      max-width: 480px;
+      width: 100%;
+      }
+      thead td, tfoot td, .column1, .column2 {
+      padding-left: 10px;
+      padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <h1>:app-name :environment-title deploy was successful!</h1>
+            </td>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td>
+              <ul>
+                <li>
+                  <a href=":app-url">App</a>
+                </li>
+                <li class="separator"> &diams;
+                </li>
+                <li>
+                  <a href=":scm-url">Git</a>
+                </li>
+                <li class="separator"> &diams;
+                </li>
+                <li>
+                  <a href=":issue-url">JIRA</a>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td class="column1">
+                    <h2>Access the Site</h2>
+                    <p>
+                      The site is available to view at
+                      <a href=":app-url">:app-url</a>.
+                    </p>
+                    <h2>Development Items Ready for Evaluation</h2>
+                    <p>
+                      This spot will eventually show resolved JIRA issues.
+                    </p>
+                    <h2>Merged Lines of Development</h2>
+                    <p>
+                      This spot will eventually show merged Git pull requests.
+                    </p>
+                  </td>
+                  <td class="column2">
+                    <h2>Server Scope</h2>
+                    <p>:environment-scope</p>
+                    <h2>Server Lifespan</h2>
+                    <p>
+                      :environment-lifespan
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
